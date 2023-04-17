@@ -2,18 +2,21 @@
 
 Webfinger and host-meta client library for Node.js.
 
+Forked from https://www.npmjs.com/package/webfinger, I've added support for the "application/jrd+json" content type.
+
 It supports:
 
-* XRD documents
-* JRD documents
-* host-meta
-* host-meta.json
-* http and https
-* RFC 6415 and the upcoming Webfinger RFC (up to draft 09)
+- XRD documents
+- JRD documents
+- host-meta
+- host-meta.json
+- http and https
+- RFC 6415 and the upcoming Webfinger RFC (up to draft 09)
 
 ## License
 
 Copyright 2012,2013 E14N https://e14n.com/
+Copyright 2023 Hunter Perrin
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -62,11 +65,11 @@ results. (But future versions of this library may do it for you.)
 As above, but you can use the `options` object to control
 behaviour. Currently, the options are:
 
-* `httpsOnly`: boolean flag, default `false` for whether to only use
+- `httpsOnly`: boolean flag, default `false` for whether to only use
   HTTPS for communicating with the server. When this is set, it won't
   use Webfinger, host-meta or LRDD endpoints that aren't HTTPS, and won't
   follow redirect requests to HTTP endpoints.
-* `webfingerOnly`: boolean flag, default `false` for whether to only use
+- `webfingerOnly`: boolean flag, default `false` for whether to only use
   the .well-known/webfinger endpoint. When this is set, it won't
   use host-meta and LRDD endpoints as a fallback.
 
@@ -80,7 +83,7 @@ supports LRDD.
 
 As above, but with fine control of options. Options include:
 
-* `httpsOnly`: boolean flag, default `false` for whether to only use
+- `httpsOnly`: boolean flag, default `false` for whether to only use
   HTTPS for communicating with the server. When this is set, it won't
   use Webfinger, host-meta or LRDD endpoints that aren't HTTPS, and won't
   follow redirect requests to HTTP endpoints.
@@ -96,7 +99,7 @@ Gets link data for the host at `address` and returns it to function `callback`.
 As above, but you can use the `options` object to control
 behaviour. Currently, the options are:
 
-* `httpsOnly`: boolean flag, default `false`, for whether to only use
+- `httpsOnly`: boolean flag, default `false`, for whether to only use
   HTTPS for communicating with the server. When this is set, it won't
   use host-meta or host-meta.json endpoints that aren't HTTPS, and won't
   follow redirect requests to HTTP endpoints.
@@ -105,7 +108,7 @@ behaviour. Currently, the options are:
 
 Gets link data for `address` and returns it to function `callback`.
 
-If you've got an address and you don't want to bother figuring out if it's a 
+If you've got an address and you don't want to bother figuring out if it's a
 webfinger or a hostname, call this and we'll do it for you.
 
 `callback` works just like with `webfinger()`.
@@ -128,4 +131,4 @@ your main computer.
 
 Bugs welcome, see:
 
- https://github.com/e14n/webfinger/issues
+https://github.com/hperrin/webfinger-jrd/issues
